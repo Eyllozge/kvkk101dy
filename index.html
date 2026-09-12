@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faz Ödevi: Marka Tescil Süreci</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <!-- ══════════════════════════════════════
+       LOGIN SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen active" id="loginScreen">
+    <div id="loginCard">
+ 
+      <img
+        src="images/logo.png"
+        alt="Lawducation Logo"
+        class="login-logo"
+        onerror="this.style.display='none'; document.getElementById('logoPlaceholder').style.display='flex';"
+      />
+      <div class="login-logo-placeholder" id="logoPlaceholder" style="display:none;">Logo</div>
+ 
+      <h1 class="login-title">Kişisel Verileri Koruma Kanunu 101</h1>
+      <p class="login-subtitle">Testi başlatmak ve skorunuzu kaydetmek için adınızı giriniz.</p>
+ 
+      <input
+        type="text"
+        id="nameInput"
+        class="login-input"
+        placeholder="Adınız Soyadınız"
+        autocomplete="off"
+        maxlength="80"
+      />
+      <p class="input-error" id="loginError"></p>
+ 
+      <button class="btn-start" id="startBtn">Eğitime Başla</button>
+    </div>
+  </div>
+ 
+ 
+  <!-- ══════════════════════════════════════
+       QUIZ SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen" id="quizScreen">
+    <div id="quizCard">
+ 
+      <h2 class="card-title">Lawducation Eğitim Uygulaması</h2>
+ 
+      
+      <div class="header-row">
+        <div></div>
+        <div class="col-label">D</div>
+        <div class="col-label">Y</div>
+      </div>
+ 
+      <!-- Quiz 
+           data-correct : doğru cevap ("D" veya "Y")
+           data-explain : yanlış işaretlenince gösterilecek açıklama
+      -->
+      <ul class="quiz-list" id="quizList">
+ 
+        <li class="quiz-item"
+            data-correct="D"
+            data-explain="Sınai mülkiyet hukukuna hakim olan ülkesellik ilkesi uyarınca, ulusal tesciller sadece ilgili ülkenin egemenlik sınırları içinde koruma doğurur; uluslararası koruma için Madrid Protokolü gibi sistemlerle ayrıca başvuru yapılmalıdır.">
+          <div class="quiz-row">
+            <div class="statement">1. Türkiye'de TÜRKPATENT nezdinde yapılan bir marka tescili, ülkesellik ilkesi gereği kural olarak sadece Türkiye sınırları içinde hukuki koruma sağlar.</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation">
+</div>
+        </li>
+ 
+        <li class="quiz-item"
+            data-correct="Y"
+            data-explain="6769 sayılı Sınai Mülkiyet Kanunu (SMK) kapsamında şekli incelemedeki eksikliklerin tamamlanması için başvuru sahibine tanınan kesin süre 3 ay değil, 2 aydır.">
+          <div class="quiz-row">
+            <div class="statement">2. Marka tescil başvurusu sırasında yapılan şekli incelemede bir eksiklik tespit edilirse, başvuru sahibine bu eksikliği gidermesi için kanunen 3 aylık bir kesin süre verilir.</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation">
+</div>
+        </li>
+ 
+        <li class="quiz-item"
+            data-correct="D"
+            data-explain="Aynı veya ayırt edilemeyecek kadar benzer olma durumu SMK m. 5/1-ç bendi uyarınca mutlak ret sebebidir ve Kurum bunu hiçbir üçüncü kişinin itirazına gerek duymadan ilk inceleme aşamasında kendiliğinden reddeder.">
+          <div class="quiz-row">
+            <div class="statement">3. Daha önce tescil edilmiş bir marka ile aynı veya ayırt edilemeyecek kadar benzer olan yeni bir marka başvurusu, TÜRKPATENT uzmanları tarafından "Mutlak Ret Sebepleri" (SMK m. 5) kapsamında re'sen (kendiliğinden) reddedilir.
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+ 
+        <li class="quiz-item" 
+            data-correct="Y"
+            data-explain="Eski mevzuatta (556 sayılı KHK) bu süre 3 ay iken, yürürlükteki SMK ile bülten ilanına itiraz süresi tescil sürecini hızlandırmak amacıyla 2 aya indirilmiştir.
+">
+          <div class="quiz-row">
+            <div class="statement">4. Mutlak ret süzgecinden geçerek Resmi Marka Bülteni'nde yayımlanan bir markaya karşı üçüncü kişilerin itiraz etme süresi yayım tarihinden itibaren 3 aydır.
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="Y"
+            data-explain="Marka koruması, tescil belgesinin düzenlendiği tarihten değil; öncelik sırasının korunması amacıyla başvurunun resmi olarak Kuruma yapıldığı gün, saat ve dakikadan itibaren geriye dönük olarak başlar.
+">
+          <div class="quiz-row">
+            <div class="statement">5. Marka tescil süreci başarıyla tamamlandığında, markanın yasal koruması tescil belgesinin düzenlendiği ve basıldığı tarihten itibaren başlar.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="D"
+            data-explain="Marka hakkı, patent veya tasarımlardan farklı olarak, 10 yılda bir yenileme harcı yatırılmak şartıyla sonsuza kadar uzatılabilen tek sınai mülkiyet hakkıdır.
+">
+          <div class="quiz-row">
+            <div class="statement">6. Türkiye'de tescil edilen bir markanın koruma süresi başvuru tarihinden itibaren 10 yıldır ve bu süre onar yıllık dönemler halinde sınırsız kez yenilenebilir.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="D"
+            data-explain="Türkiye'nin de taraf olduğu Nice Anlaşması uyarınca tüm marka başvuruları dünya standardı olan bu 45 sınıflı emtia listesine göre sınıflandırılır.
+
+">
+          <div class="quiz-row">
+            <div class="statement">7. Marka tescilinde mal ve hizmetlerin gruplandırılmasında kullanılan ve toplamda 45 sınıftan oluşan uluslararası sistem Nice Sınıflandırması olarak adlandırılır.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="D"
+            data-explain="SMK m. 19/3 uyarınca düzenlenen -kullanım ispatı def'i-, 5 yıldır tescilli olup da piyasada hiçbir faaliyette bulunmayan markaların haksız yere yeni ve ciddi yatırımları engellemesini önlemek amacıyla getirilmiştir.
+
+">
+          <div class="quiz-row">
+            <div class="statement">8.Bülten yayımına yapılan bir itirazda, eğer itiraz gerekçesi olan marka Türkiye'de en az 5 yıldır tescilliyse, başvuru sahibinin talebi üzerine itiraz edenin bu markayı Türkiye'de ciddi biçimde kullandığını ispatlaması gerekir.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="D"
+            data-explain="YİDK, kurumun nihai idari karar organıdır. Daire başkanlıklarının kararlarından zarar gören taraflar 2 ay içinde YİDK'ya başvurarak idari sürecin son kararını talep ederler.
+
+">
+          <div class="quiz-row">
+            <div class="statement">9. TÜRKPATENT Markalar Dairesi'nin verdiği kararlara karşı kurum içindeki en üst idari itiraz mercii Yeniden İnceleme ve Değerlendirme Kurulu'dur (YİDK).
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="Y"
+            data-explain="Anayasa'nın idari işlemlerin denetimi ilkesi gereği, YİDK kararlarının tebliğinden itibaren 2 ay içinde Ankara Fikri ve Sınai Haklar Hukuk Mahkemesinde kararın iptali talebiyle dava açılabilir.
+
+">
+          <div class="quiz-row">
+            <div class="statement">10. TÜRKPATENT Yeniden İnceleme ve Değerlendirme Kurulu (YİDK) tarafından verilen nihai idari kararlar kesin olup, bu kararlara karşı yargı yoluna başvurulamaz.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="D"
+            data-explain="Uluslararası anlaşmalar gereği markalar için rüçhan hakkı süresi 6 aydır. Bu süre içinde Türkiye'de başvuru yapıldığında, aradaki süreçte başkaları başvuru yapsa dahi ilk ülkedeki başvuru tarihi esas alınır.
+
+">
+          <div class="quiz-row">
+            <div class="statement">11. Paris Sözleşmesi'ne taraf ülkelerden birinde usulüne uygun bir marka başvurusu yapan kişi, bu başvuru tarihinden itibaren 6 ay içinde Türkiye'de aynı marka için başvuru yaparsa rüçhan (öncelik) hakkından yararlanabilir.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="Y"
+            data-explain=" SMK m. 5/3 uyarınca, önceki marka sahibinin noter onaylı muvafakatnamesi Kuruma sunulursa, marka benzerlik gerekçesiyle (m. 5/1-ç) mutlak ret kapsamında kendiliğinden reddedilemez; tescilin önü açılır.
+
+">
+          <div class="quiz-row">
+            <div class="statement">12. 6769 sayılı SMK ile getirilen muvafakatname (birlikte var olma) müessesesi sayesinde; önceki marka sahibinin noter onaylı açık izni olsa dahi, sonraki tarihli benzer bir marka başvurusu TÜRKPATENT tarafından yine de re'sen reddedilir.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="Y"
+            data-explain="  Marka hukukunda -kısmi tescil- veya -kısmi ret- mekanizması geçerlidir. İtiraza uğramayan veya reddedilmeyen mal/hizmet sınıfları ayrıştırılarak o kısımlar yönünden tescil belgesi başarıyla düzenlenir.
+
+">
+          <div class="quiz-row">
+            <div class="statement">13. Bir marka tescil başvurusu, içerdiği mal ve hizmetlerin sadece bir kısmı için itiraza uğrar veya reddedilirse, başvuru tamamen iptal edilir ve reddedilmeyen sınıflar için de belge düzenlenemez.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="Y"
+            data-explain=" Tescilsiz kullanım, ticaret unvanı veya işletme adı gibi haklara dayalı öncelikler birer -Nispi Ret Sebebi- dir (SMK m. 6). Kurum bunları ilk aşamada kendiliğinden göremez; ancak hak sahibinin b bülten aşamasında süresi içinde (2 ay) itiraz etmesi halinde inceler.
+">
+          <div class="quiz-row">
+            <div class="statement">14. Ticaret unvanları, işletme adları veya tescilsiz logolar gibi haklar, TÜRKPATENT uzmanları tarafından ilk inceleme aşamasında "Mutlak Ret Sebebi" olarak re'sen dikkate alınır ve başvuru doğrudan reddedilir.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+
+        <li class="quiz-item" 
+            data-correct="D"
+            data-explain=" SMK m. 25 ve m. 26 uyarınca bir marka, sahibinin markasını koruyamaması yüzünden halk arasında tamamen o malın genel adı haline gelirse (örneğin selpak, aspirin, pençesil gibi süreçler), bu durum markanın hukuki korumasını kaybetmesine yol açan yasal bir iptal/hükümsüzlük nedenidir.">
+          <div class="quiz-row">
+            <div class="statement">15. Tescilli bir markanın, tescil sahibinin eylemleri veya eylemsizliği (ilgisizliği) nedeniyle ticari hayatta o ürün grubunun jenerik (genel/cins) ismi haline gelmesi, o markanın iptal edilme nedenlerinden biridir.
+
+</div>
+            <div class="btn-wrap"><button class="btn btn-d" data-answer="D">D</button></div>
+            <div class="btn-wrap"><button class="btn btn-y" data-answer="Y">Y</button></div>
+          </div>
+          <div class="explanation"></div>
+        </li>
+ 
+      </ul>
+ 
+      <p class="global-msg" id="globalMsg"></p>
+ 
+      <div class="submit-wrap">
+        <button class="btn-submit" id="submitBtn">Cevapla</button>
+      </div>
+ 
+    </div>
+  </div>
+ 
+ 
+  <script>
+
+    const API_URL = 'VERCELURL';
+ 
+    /* ── STATE ─────────────────────────────────────────── */
+    let userName = '';
+ 
+    /* ── DOM REFS ──────────────────────────────────────── */
+    const loginScreen = document.getElementById('loginScreen');
+    const quizScreen  = document.getElementById('quizScreen');
+    const nameInput   = document.getElementById('nameInput');
+    const loginError  = document.getElementById('loginError');
+    const startBtn    = document.getElementById('startBtn');
+    const quizItems   = document.querySelectorAll('.quiz-item');
+    const submitBtn   = document.getElementById('submitBtn');
+    const globalMsg   = document.getElementById('globalMsg');
+ 
+    /* ── LOGIN ─────────────────────────────────────────── */
+    startBtn.addEventListener('click', startQuiz);
+    nameInput.addEventListener('keydown', e => { if (e.key === 'Enter') startQuiz(); });
+ 
+    function startQuiz() {
+      const val = nameInput.value.trim();
+      if (!val) {
+        loginError.textContent = 'Lütfen adınızı ve soyadınızı giriniz.';
+        nameInput.focus();
+        return;
+      }
+      loginError.textContent = '';
+      userName = val;
+ 
+      loginScreen.classList.remove('active');
+      quizScreen.classList.add('active');
+    }
+ 
+    /* ── QUIZ: D / Y buton seçimi ──────────────────────── */
+    quizItems.forEach(item => {
+      const correct  = item.dataset.correct;
+      const explain  = item.dataset.explain;
+      const explBox  = item.querySelector('.explanation');
+      const btns     = item.querySelectorAll('.btn');
+ 
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.classList.contains('selected')) return; // zaten seçili
+ 
+          // Seçimi güncelle
+          btns.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+ 
+          // Yanlış ise açıklamayı göster
+          if (btn.dataset.answer !== correct) {
+            explBox.textContent = explain;
+            item.classList.add('wrong-open');
+          } else {
+            item.classList.remove('wrong-open');
+            explBox.textContent = '';
+          }
+        });
+      });
+    });
+ 
+    /* ── SUBMIT ────────────────────────────────────────── */
+    submitBtn.addEventListener('click', async () => {
+      // Tüm sorular cevaplanmış mı?
+      const unanswered = [...quizItems].some(
+        item => !item.querySelector('.btn.selected')
+      );
+      if (unanswered) {
+        globalMsg.textContent = 'Lütfen tüm soruları cevaplayın.';
+        return;
+      }
+ 
+      globalMsg.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Kaydediliyor…';
+ 
+      const payload = {
+        isim_soyisim: nameInput.value.trim(),
+        date: new Date().toISOString()   
+      };
+ 
+      try {
+        const res = await fetch(API_URL, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
+        });
+ 
+        if (!res.ok) throw new Error(`Sunucu hatası: ${res.status}`);
+ 
+        submitBtn.textContent = 'Kaydedildi ✓';
+        globalMsg.style.color = '#2ecc71';
+        globalMsg.textContent = 'Cevaplarınız başarıyla kaydedildi.';
+ 
+        // Butonları kilitle
+        quizItems.forEach(item =>
+          item.querySelectorAll('.btn').forEach(b => b.disabled = true)
+        );
+ 
+      } catch (err) {
+        console.error('Kayıt hatası:', err);
+        globalMsg.style.color = '#ff6b6b';
+        globalMsg.textContent = 'Kayıt sırasında bir hata oluştu. Lütfen tekrar deneyin.';
+        submitBtn.disabled    = false;
+        submitBtn.textContent = 'Cevapla';
+      }
+    });
+  </script>
+ 
+</body>
+</html>
+ 

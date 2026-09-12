@@ -1,0 +1,9 @@
+{
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/api/submit",
+      "destination": "/api/main.py"
+    }
+  ]
+}
